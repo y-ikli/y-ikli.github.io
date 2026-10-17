@@ -16,7 +16,6 @@
         <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
       </a>
     </p>
-    <p style="margin: 0 0 0.6rem; font-size: 1.05em;">Je construis des plateformes et des pipelines de données pour la santé, la biotech et la recherche : des données cliniques, hospitalières et scientifiques fiables, traçables et protégées.</p>
     <p style="margin: 0; color: #555; font-size: 0.95em;"><strong>Disponible immédiatement</strong></p>
   </div>
 </div>
@@ -25,11 +24,11 @@
 
 ## À propos
 
-Data Engineer depuis trois ans, j'ai travaillé sur des projets de santé et de recherche : une plateforme de recherche clinique déployée dans trois hôpitaux européens, la chimiothèque d'une biotech, des données cliniques au CHU de Lille, l'analyse d'activité d'établissements de santé.
+Data Engineer depuis trois ans, j'ai travaillé sur des projets de santé et de recherche : une plateforme de recherche clinique déployée dans trois hôpitaux européens, la chimiothèque d'une biotech, des données cliniques au CHU de Lille, et l'automatisation des rapports d'activité PMSI, réutilisables pour chaque nouvel établissement de santé.
 
-Mon master en data science appliquée à la santé m'a donné les bases du domaine. Ces projets m'en ont appris les exigences : la confidentialité des données patient, la qualité et la traçabilité de chaque donnée, et le travail au plus près des cliniciens, des chercheurs et des chimistes. J'y applique les bonnes pratiques du développement logiciel : cadrage du besoin, tests, CI/CD, versioning et documentation.
+Mon master en data science appliquée à la santé m'a donné les bases du domaine. Ces projets m'en ont appris les exigences : la confidentialité des données patient, la qualité et la traçabilité de chaque donnée. J'y applique les bonnes pratiques du développement logiciel : cadrage du besoin, tests, CI/CD, versioning et documentation.
 
-J'ai commencé ma carrière dans l'enseignement. Passionné de numérique, j'ai repris mes études par passion, en licence puis en master. J'en garde le goût de comprendre les problèmes et celui de transmettre.
+J'ai commencé ma carrière dans l'enseignement, puis j'ai repris mes études par passion, en licence puis en master. De l'enseignement, j'ai gardé le goût de comprendre les problèmes et celui de transmettre. Je travaille facilement avec des profils non techniques et dans des équipes pluridisciplinaires : cliniciens, chercheurs, chimistes, équipes métier. Je sais vulgariser un sujet technique et en faire une synthèse claire, pour que chacun puisse décider.
 
 **[Voir les projets →](./projets/index.md)**
 
@@ -41,7 +40,7 @@ J'ai commencé ma carrière dans l'enseignement. Passionné de numérique, j'ai 
 |---|---|---|
 | Données de recherche clinique de plusieurs hôpitaux | Inria, projet européen | la donnée patient ne quitte pas l'hôpital ; un schéma d'échange commun, vérifié automatiquement |
 | Signaux physiologiques et données cliniques | CHU de Lille & CIC-IT | données déséquilibrées, rigueur de l'évaluation |
-| Données d'activité hospitalière | Alicante, éditeur de logiciels santé | indicateurs de pilotage fiables pour chaque établissement |
+| Données d'activité hospitalière (PMSI) | Alicante, éditeur de logiciels santé | rapports d'activité automatisés, réutilisables pour chaque nouvel établissement |
 | Chimiothèque et bases moléculaires | Apteeus, biotech | déduplication, normalisation, traçabilité des sources |
 | Documents de recherche pharmaceutique et structures moléculaires | MolScout | confidentialité (100 % local), réponses vérifiées, chimie calculée avec RDKit |
 
@@ -57,7 +56,7 @@ J'ai commencé ma carrière dans l'enseignement. Passionné de numérique, j'ai 
       <span style="font-size: 0.88em; color: #00695c; font-weight: 600;">Recherche clinique multi-hôpitaux</span>
       <span style="font-size: 0.88em; color: #00695c; font-weight: 600;">Architecture fédérée</span>
       <span style="font-size: 0.88em; color: #00695c; font-weight: 600;">Données cliniques</span>
-      <span style="font-size: 0.88em; color: #00695c; font-weight: 600;">Activité hospitalière</span>
+      <span style="font-size: 0.88em; color: #00695c; font-weight: 600;">Activité hospitalière (PMSI)</span>
       <span style="font-size: 0.88em; color: #00695c; font-weight: 600;">Chimio-informatique (RDKit)</span>
       <span style="font-size: 0.88em; color: #00695c; font-weight: 600;">Référentiel de composés (MDM)</span>
     </div>
@@ -150,7 +149,7 @@ J'ai commencé ma carrière dans l'enseignement. Passionné de numérique, j'ai 
       <strong>Alicante (OSPI) — Analytics Engineer (Stage)</strong>
       <span style="color: #888; font-size: 0.9em;">Lille · Avr. – Août 2022</span>
     </div>
-    <p style="margin: 0.5rem 0 0;">Éditeur de logiciels pour les établissements de santé. Automatisation de l'analyse d'activité réalisée pour chaque nouvel établissement client d'un groupe hospitalier : contrôle de la qualité des données, calcul des indicateurs de pilotage et rapports multi-formats, avec un même traitement réutilisable pour chaque établissement.</p>
+    <p style="margin: 0.5rem 0 0;">Éditeur de logiciels pour les établissements de santé. Automatisation des rapports d'analyse d'activité PMSI réalisés pour chaque nouvel établissement client d'un groupe hospitalier : contrôle de la qualité des données, calcul des indicateurs de pilotage et rapports multi-formats, avec un même traitement réutilisable pour chaque nouvel établissement de santé.</p>
   </div>
 
   <div style="border-left: 3px solid #9c27b0; padding: 0.8rem 1.2rem; background: rgba(0,0,0,0.02); border-radius: 0 6px 6px 0;">

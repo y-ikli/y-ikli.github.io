@@ -1,0 +1,56 @@
+site_name: "Younes IKLI — Data Engineer santé"
+site_description: "Data Engineer pour la santé, la biotech et la recherche : plateformes de données cliniques, hospitalières et scientifiques."
+site_url: https://y-ikli.github.io/
+site_author: Younes IKLI
+
+nav:
+  - Accueil: index.md
+  - Projets:
+    - 'Mes projets': projets/index.md
+    - MolScout: projets/molscout.md
+
+theme:
+  name: material
+  language: fr
+  custom_dir: docs
+  palette:
+    - scheme: default
+      primary: teal
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Basculer en mode sombre
+    - scheme: slate
+      primary: teal
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Basculer en mode clair
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.annotate
+
+extra_css:
+  - custom.css
+
+extra_javascript:
+  - open_external_newtab.js
+
+extra:
+  search:
+    placeholder: Rechercher
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - meta
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences

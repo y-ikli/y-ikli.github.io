@@ -1,0 +1,105 @@
+/*
+Palette inspirée data :
+- Bleu : #1976d2
+- Vert : #43a047
+- Orange : #fb8c00
+- Gris : #37474f
+*/
+
+
+h1, h2, h3 {
+  color: #1976d2;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  border: none;
+  background: none;
+}
+
+.md-typeset a {
+  color: #fb8c00;
+}
+
+.md-typeset strong {
+  color: #37474f;
+}
+
+/* Pleine largeur : seul .md-grid contrôle le centrage dans Material */
+.md-grid {
+  max-width: 100% !important;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+
+/* Empêcher le défilement horizontal */
+body {
+  overflow-x: hidden;
+}
+
+/* ================================
+   Mode nuit — corrections couleurs
+   ================================ */
+
+/* Backgrounds blancs des cards → fond sombre adapté */
+[data-md-color-scheme="slate"] div[style*="background: #fff"] {
+  background: #1e2835 !important;
+}
+
+/* "Disponible" badge — fond vert clair + texte vert très foncé */
+[data-md-color-scheme="slate"] span[style*="background: #e8f5e9"] {
+  background: rgba(67,160,71,0.25) !important;
+}
+[data-md-color-scheme="slate"] span[style*="color: #1b5e20"] {
+  color: #a5d6a7 !important;
+}
+
+/* Texte quasi-noir (#263238) → gris clair */
+[data-md-color-scheme="slate"] span[style*="color: #263238"],
+[data-md-color-scheme="slate"] div[style*="color: #263238"] {
+  color: #cfd8dc !important;
+}
+
+/* Titre "Infrastructure & CI/CD" — gris foncé #37474f → gris clair */
+[data-md-color-scheme="slate"] span[style*="color: #37474f"],
+[data-md-color-scheme="slate"] div[style*="color: #37474f"] {
+  color: #b0bec5 !important;
+}
+
+/* Compétences — couleurs sombres → variantes lumineuses pour mode nuit */
+[data-md-color-scheme="slate"] span[style*="color: #1565c0"] { color: #90caf9 !important; }
+[data-md-color-scheme="slate"] span[style*="color: #2e7d32"] { color: #a5d6a7 !important; }
+[data-md-color-scheme="slate"] span[style*="color: #e65100"] { color: #ffcc80 !important; }
+[data-md-color-scheme="slate"] span[style*="color: #6a1b9a"] { color: #ce93d8 !important; }
+
+/* Texte secondaire */
+[data-md-color-scheme="slate"] span[style*="color: #888"] { color: #78909c !important; }
+[data-md-color-scheme="slate"] p[style*="color: #555"]   { color: #90a4ae !important; }
+[data-md-color-scheme="slate"] p[style*="color: #7b1fa2"] { color: #ce93d8 !important; }
+
+/* Tableaux responsive et plus lisibles */
+.md-typeset table {
+  width: 100% !important;
+  max-width: 100% !important;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.md-typeset table th,
+.md-typeset table td {
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(55, 71, 79, 0.14);
+  text-align: left;
+  vertical-align: top;
+}
+
+.md-typeset table th {
+  background: rgba(25, 118, 210, 0.08);
+  color: #1976d2;
+}
+
+.md-typeset table tr:nth-child(even) {
+  background: rgba(25, 118, 210, 0.03);
+}

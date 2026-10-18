@@ -2,6 +2,6 @@
 
 ## [MolScout](molscout.md)
 
-Un assistant IA pour la recherche pharmaceutique, qui ne répond que ce qu'il peut prouver : il interroge les rapports scientifiques d'un chimiste, cite le passage exact qui justifie chaque réponse, et calcule les propriétés des molécules avec RDKit au lieu de les laisser deviner au modèle. Entièrement en local : aucune donnée ne quitte la machine, une exigence forte pour des documents de recherche confidentiels.
+Un seul outil pour les équipes de drug discovery : interroger en langage naturel une base de documents de recherche confidentiels, avec une réponse citée et vérifiée, et utiliser dans la même interface les outils de chémoinformatique (propriétés, similarité, sous-structure) sans changer de logiciel. Les SMILES sont reconnus quelle que soit leur écriture, et les propriétés calculées par RDKit plutôt que devinées. Entièrement en local : aucune donnée ne quitte l'entreprise.
 
 **Stack :** Python · LangChain · LangGraph · Ollama · Qdrant · RDKit · FastAPI · Streamlit

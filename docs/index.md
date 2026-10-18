@@ -36,7 +36,7 @@ Ancien enseignant, j'ai repris mes études par passion, en licence puis en maste
 
 ## Stack technique
 
-<div style="margin: 0.5rem 0 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.6rem;">
+<div class="stack-grid">
 
   <div style="background: rgba(25,118,210,0.06); border-radius: 8px; padding: 0.7rem 1rem;">
     <div style="font-size: 0.7em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #1565c0; margin-bottom: 0.5rem;">Langages</div>
@@ -48,7 +48,7 @@ Ancien enseignant, j'ai repris mes études par passion, en licence puis en maste
   </div>
 
   <div style="background: rgba(67,160,71,0.06); border-radius: 8px; padding: 0.7rem 1rem;">
-    <div style="font-size: 0.7em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #2e7d32; margin-bottom: 0.5rem;">Transformation & Orchestration</div>
+    <div style="font-size: 0.7em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #2e7d32; margin-bottom: 0.5rem;">Transformation</div>
     <div style="display: flex; flex-direction: column; gap: 0.25rem;">
       <span style="font-size: 0.88em; color: #2e7d32; font-weight: 600;">dbt</span>
       <span style="font-size: 0.88em; color: #2e7d32; font-weight: 600;">Airflow</span>
@@ -56,7 +56,7 @@ Ancien enseignant, j'ai repris mes études par passion, en licence puis en maste
   </div>
 
   <div style="background: rgba(251,140,0,0.06); border-radius: 8px; padding: 0.7rem 1rem;">
-    <div style="font-size: 0.7em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #e65100; margin-bottom: 0.5rem;">Cloud & Bases de données</div>
+    <div style="font-size: 0.7em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #e65100; margin-bottom: 0.5rem;">Cloud & Données</div>
     <div style="display: flex; flex-direction: column; gap: 0.25rem;">
       <span style="font-size: 0.88em; color: #e65100; font-weight: 600;">GCP</span>
       <span style="font-size: 0.88em; color: #e65100; font-weight: 600;">BigQuery</span>
@@ -67,7 +67,7 @@ Ancien enseignant, j'ai repris mes études par passion, en licence puis en maste
   </div>
 
   <div style="background: rgba(55,71,79,0.06); border-radius: 8px; padding: 0.7rem 1rem;">
-    <div style="font-size: 0.7em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #263238; margin-bottom: 0.5rem;">Industrialisation</div>
+    <div style="font-size: 0.7em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #263238; margin-bottom: 0.5rem;">DevOps</div>
     <div style="display: flex; flex-direction: column; gap: 0.25rem;">
       <span style="font-size: 0.88em; color: #263238; font-weight: 600;">Docker</span>
       <span style="font-size: 0.88em; color: #263238; font-weight: 600;">GitLab CI</span>
@@ -78,7 +78,7 @@ Ancien enseignant, j'ai repris mes études par passion, en licence puis en maste
   </div>
 
   <div style="background: rgba(124,58,237,0.07); border-radius: 8px; padding: 0.7rem 1rem;">
-    <div style="font-size: 0.7em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #5b21b6; margin-bottom: 0.5rem;">IA & Machine Learning</div>
+    <div style="font-size: 0.7em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #5b21b6; margin-bottom: 0.5rem;">IA & ML</div>
     <div style="display: flex; flex-direction: column; gap: 0.25rem;">
       <span style="font-size: 0.88em; color: #5b21b6; font-weight: 600;">Scikit-learn</span>
       <span style="font-size: 0.88em; color: #5b21b6; font-weight: 600;">LLM</span>

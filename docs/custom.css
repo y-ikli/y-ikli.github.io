@@ -103,3 +103,25 @@ body {
 .md-typeset table tr:nth-child(even) {
   background: rgba(25, 118, 210, 0.03);
 }
+
+/* Stack technique : les cinq blocs sur une ligne, en colonnes sur petit écran */
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin: 0.5rem 0 2rem;
+}
+
+.stack-grid > div {
+  padding: 0.7rem 0.75rem !important;
+}
+
+.stack-grid > div > div:first-child {
+  letter-spacing: 0 !important;
+}
+
+@media (max-width: 900px) {
+  .stack-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}

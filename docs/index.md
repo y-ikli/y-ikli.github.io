@@ -1,4 +1,4 @@
-# Younes IKLI — Data Engineer santé
+# Younes IKLI — Ingénieur de données
 
 <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; margin: 1.5rem 0;">
   <img src="photo.jpg" alt="Younes IKLI" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 3px solid #00897b; flex-shrink: 0;">
@@ -24,11 +24,13 @@
 
 ## À propos
 
-Data Engineer depuis trois ans, j'ai travaillé sur des projets de santé et de recherche : la plateforme de données d'un projet européen d'apprentissage décentralisé entre hôpitaux, la chimiothèque d'une biotech des maladies rares, des données cliniques au CHU de Lille, et l'automatisation des rapports d'activité PMSI, réutilisables pour chaque nouvel établissement de santé.
+Ingénieur de données, je conçois des chaînes de données fiables, traçables et conformes aux exigences métier, avec Python, SQL et dbt, et une expérience approfondie des données de santé.
 
-Mon master en data science appliquée à la santé m'a donné les bases du domaine. Ces projets m'en ont appris les exigences : la confidentialité des données patient, la qualité et la traçabilité de chaque donnée. J'y applique les bonnes pratiques du développement logiciel : cadrage du besoin, tests, CI/CD, versioning et documentation.
+En trois ans, j'ai contribué à la plateforme de données d'un projet européen d'apprentissage décentralisé entre hôpitaux, consolidé la chimiothèque d'une biotech de repositionnement de médicaments, mené un projet de machine learning sur une cohorte de patients avec le CHU de Lille, et automatisé des rapports d'activité PMSI réutilisables pour chaque établissement de santé. Ces compétences se transposent directement à d'autres secteurs exigeants : retail, banque, assurance, service public.
 
-Ancien enseignant, j'ai repris mes études par passion, en licence puis en master. J'en garde le goût de transmettre : former une équipe, animer un atelier, rendre un sujet technique clair pour des cliniciens, des chercheurs ou des chimistes.
+Ma façon de travailler : partir du besoin des équipes métier, être force de proposition, garantir la confidentialité et la qualité de chaque donnée, et appliquer les bonnes pratiques du génie logiciel : tests, CI/CD, versioning et documentation.
+
+Mon parcours s'est construit progressivement : l'enseignement d'abord, puis une reprise d'études en informatique et en data, menée en parallèle de la formation et de l'enseignement, avant de me consacrer entièrement à la data. J'en garde la capacité à rendre un sujet technique clair pour les équipes métier.
 
 **[Voir les projets →](./projets/index.md)**
 

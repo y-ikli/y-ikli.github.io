@@ -3,8 +3,6 @@
 **Interroger ses documents de recherche et analyser ses molécules dans un seul outil, entièrement en local.**
 
 > **Stack :** Python · LangChain · LangGraph · Ollama · Qdrant · RDKit · FastAPI · Streamlit · Docker
->
-> Dépôt privé.
 
 ---
 
@@ -18,7 +16,7 @@ Dans une équipe de drug discovery :
 
 ## Ce que j'ai construit
 
-- **Une application unique et locale** : à gauche les documents, au centre la conversation. Le chimiste pose une question en langage naturel ou colle un SMILES.
+- **Une application unique et locale** : à gauche les documents, au centre la conversation, à droite un panneau de chémoinformatique (structure d'un SMILES, caractéristiques, comparaison de deux molécules, fichier de structure vers SMILES).
 - **Des réponses citées** : chaque réponse renvoie au passage exact du document (fichier et page). La recherche combine le sens et les mots-clés, avec un filtre par composé pour ne pas mélanger les molécules.
 - **Une chimie calculée, jamais devinée** : les molécules sont reconnues quelle que soit leur écriture, et leurs propriétés (descripteurs, règle de Lipinski, similarité, sous-structure) sont calculées par RDKit.
 - **Une vérification avant affichage** : chaque affirmation est contrôlée contre sa source, sans LLM. Si elle n'est pas prouvée, l'assistant répond partiellement ou s'abstient.
@@ -37,11 +35,11 @@ Question ─► routeur ─┬─► recherche dans les documents ─┐
 
 Un **prototype fonctionnel** de bout en bout : les documents sont indexés, les questions reçoivent une réponse citée et vérifiée, la chimie s'affiche dans la conversation, et l'assistant s'abstient plutôt que d'affirmer sans preuve. Aucune donnée ne quitte la machine.
 
-![Interface principale de MolScout](../images_projets/molscout/accueil.png)
-*Les documents indexés à gauche, la zone de question au centre.*
+![MolScout : documents, réponse vérifiée et chémoinformatique sur un seul écran](../images_projets/molscout/vue_complete.png)
+*Un seul écran : les documents à gauche, une réponse citée et vérifiée au centre, la structure et les caractéristiques de la molécule à droite, calculées par RDKit.*
 
-![Réponse vérifiée avec citation](../images_projets/molscout/reponse_verifiee.png)
-*Une réponse citée, avec son statut « Vérifiée » et son temps de calcul.*
+![Comparaison de deux molécules](../images_projets/molscout/chimie_comparaison.png)
+*La comparaison de deux analogues : les deux structures côte à côte et leur similarité de Tanimoto.*
 
 ![Détail des sources citées](../images_projets/molscout/sources_citees.png)
 *Les passages exacts qui justifient la réponse, consultables en un clic.*
@@ -50,5 +48,5 @@ Un **prototype fonctionnel** de bout en bout : les documents sont indexés, les 
 
 - **Valider l'outil sur des documents réels**, avec des chimistes.
 - **Réduire le temps de réponse**, avec un modèle plus léger ou un GPU.
-- **Enrichir l'interface** : aperçu du document cité, panneau de chémoinformatique pour comparer plusieurs molécules.
+- **Enrichir l'interface** : aperçu du document cité à côté de la réponse, dessin de molécules à la main.
 - **Se connecter aux sources documentaires de l'entreprise**, au-delà des fichiers déposés.

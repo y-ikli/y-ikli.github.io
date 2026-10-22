@@ -36,18 +36,6 @@ Google Ads ──────┘
 - **129 tests Python**, avec 100 % de couverture du code d'ingestion.
 - **Trois tables prêtes pour l'analyse** : les performances quotidiennes par campagne, la comparaison mensuelle Meta / Google, et le référentiel des campagnes.
 
-![dbt build sur BigQuery](../images_projets/media_data_platform/dbt_build.png)
-*`dbt build` avec dbt Core sur BigQuery : les modèles sont créés et les 37 tests passent, 43 étapes sur 43.*
-
-![Tables finales dans BigQuery](../images_projets/media_data_platform/bigquery.png)
-*Les tables finales dans BigQuery : la table quotidienne est partitionnée par jour et regroupée par plateforme et campagne. Chaque ligne garde son étiquette `data_mode` (ici des données simulées).*
-
-![Lignage dbt du projet](../images_projets/media_data_platform/dbt_lignage.png)
-*Le lignage dbt : les deux sources brutes, leur staging, la couche intermédiaire commune, puis les tables finales et les tests qui les contrôlent.*
-
-![Documentation dbt de la table mart_campaign_daily](../images_projets/media_data_platform/dbt_modele_mart.png)
-*La documentation générée par dbt pour la table principale : modèle incrémental sur BigQuery, partitionné par date et regroupé par plateforme et campagne.*
-
 ## Perspectives
 
 - **Construire le tableau de bord Looker Studio** sur les tables finales.

@@ -8,6 +8,7 @@ nav:
   - Projets:
     - 'Mes projets': projets/index.md
     - MolScout: projets/molscout.md
+    - Media Data Platform: projets/media_data_platform.md
 
 theme:
   name: material

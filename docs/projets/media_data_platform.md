@@ -18,14 +18,15 @@ Une agence marketing pilote ses campagnes sur Meta et sur Google :
 
 ## Ce que j'ai construit
 
-- **Une ingestion fiable** : un connecteur par plateforme (API réelle de Meta Ads, données Google Ads simulées et étiquetées comme telles), et un contrat de données qui refuse tout lot invalide avant chargement.
+- **Une ingestion modulaire et fiable** : un connecteur par plateforme, tous avec la même interface, et un contrat de données qui refuse tout lot invalide avant chargement. Les données publiées sont simulées et étiquetées comme telles.
+- **Prête pour les API réelles** : le connecteur Meta Ads lit l'API Marketing réelle de Meta. Il a déjà été testé sur un vrai compte publicitaire ; il suffit de fournir un jeton d'accès pour passer en données réelles.
 - **Un chargement rejouable** : chaque chargement remplace sa fenêtre de dates dans une seule transaction. Relancer donne le même résultat, sans doublon.
 - **Une modélisation dbt en trois couches** (staging, intermediate, marts), avec un grain unique (plateforme × campagne × jour) et chaque indicateur défini une seule fois. Le modèle principal est incrémental et retraite les 7 derniers jours pour absorber les corrections tardives.
 - **Des coûts maîtrisés** : tables partitionnées par jour et plafond de volume par requête.
 - **Une infrastructure décrite en code** avec Terraform : datasets BigQuery, comptes de service à droits minimaux, jobs Cloud Run, Workflows et Scheduler, déploiement depuis GitHub Actions sans clé.
 
 ```
-Meta Ads (API) ──┐
+Meta Ads ────────┐
                  ├─► contrat de données ─► BigQuery (raw) ─► dbt : staging ─► intermediate ─► marts
 Google Ads ──────┘
 ```

@@ -40,5 +40,5 @@ Google Ads ──────┘
 ## Perspectives
 
 - **Construire le tableau de bord Looker Studio** sur les tables finales.
-- **Appliquer le déploiement**, déjà décrit en Terraform, pour une exécution automatique chaque matin.
+- **Activer le déploiement** : il est déjà décrit en Terraform (exécution automatique chaque matin), volontairement non appliqué pour ne pas engager de coûts.
 - **Ajouter d'autres sources publicitaires**, grâce à l'interface commune des connecteurs.

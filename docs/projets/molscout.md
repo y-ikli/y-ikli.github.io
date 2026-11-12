@@ -35,6 +35,12 @@ Question ─► routeur ─┬─► recherche dans les documents ─┐
 
 Un **prototype fonctionnel** de bout en bout : les documents sont indexés, les questions reçoivent une réponse citée et vérifiée, la chimie s'affiche dans la conversation, et l'assistant s'abstient plutôt que d'affirmer sans preuve. Aucune donnée ne quitte la machine.
 
+Mesuré sur un jeu d'évaluation synthétique (74 cas vérifiables), entre la version précédente et la version actuelle :
+
+- **Réponses exactes** : de 43 % à 95 % (20 cas sur 21 en génération).
+- **Citations valides** : de 75 % à 100 %.
+- **Refus injustifiés** : de 28 % à 0 %.
+
 ![MolScout : documents, réponse vérifiée et chémoinformatique sur un seul écran](../images_projets/molscout/vue_complete.png)
 *Un seul écran : les documents à gauche, une réponse citée et vérifiée au centre, la structure et les caractéristiques de la molécule à droite, calculées par RDKit.*
 

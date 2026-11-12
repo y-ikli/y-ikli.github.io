@@ -4,7 +4,7 @@
 
 > **Stack :** Python · SQL · BigQuery · dbt Core · Kestra · Terraform · Docker · Cloud Storage · Looker Studio
 >
-> En production sur Google Cloud depuis le 10 novembre 2026
+> En production sur Google Cloud depuis le 10 novembre 2026 · Code présenté sur demande
 
 ---
 
@@ -43,7 +43,7 @@ Une observation ponctuelle ne suffit pas. Il faut prendre cette photo **réguli�
 
 ## Captures
 
-### Les passages du premier jour, 100 % de réussite
+### Les passages du premier jour
 
 ![Tableau de bord Kestra](../images_projets/trafic_aerien/kestra_tableau_de_bord.png)
 

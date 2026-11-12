@@ -26,7 +26,9 @@
 
 Data Engineer avec 3 ans d'expérience, je construis des chaînes de données fiables et mises en production, de la collecte jusqu'aux indicateurs utilisés par les équipes métier.
 
-Formé au génie logiciel, j'applique à la data les bonnes pratiques du développement : tests automatiques, CI/CD, infrastructure en code, documentation. Ouvert à tous les secteurs.
+J'applique à la data les bonnes pratiques de l'ingénierie logicielle : tests, CI/CD, versionnement, documentation, infrastructure en code.
+
+Mes expériences se sont faites dans des environnements exigeants, la santé, la biotech et la recherche, où chaque donnée doit être juste et traçable. Ces réflexes s'appliquent à tous les secteurs, et je suis ouvert à de nouveaux domaines : retail, industrie, banque, assurance.
 
 Ancien enseignant, je sais rendre un sujet technique clair pour les équipes métier.
 
@@ -34,7 +36,7 @@ Ancien enseignant, je sais rendre un sujet technique clair pour les équipes mé
 
 ## Projets
 
-- **[Pipeline trafic aérien](projets/trafic_aerien.md)** : tous les vols en cours dans le monde, collectés toutes les deux heures et transformés en indicateurs. En production sur GCP (BigQuery, dbt, Kestra, Terraform).
+- **[Pipeline trafic aérien](projets/trafic_aerien.md)** : tous les vols en cours dans le monde, collectés toutes les deux heures et transformés en indicateurs, affichés dans un tableau de bord Looker Studio. En production sur GCP (BigQuery, dbt, Kestra, Terraform).
 - **[Media Data Platform](projets/media_data_platform.md)** : les données publicitaires de Meta Ads et Google Ads réunies dans BigQuery, avec une seule définition par indicateur (dbt, Terraform, GitHub Actions).
 - **[MolScout](projets/molscout.md)** : un assistant RAG local qui répond en citant ses sources et dont la qualité est mesurée à chaque évolution (LangGraph, Qdrant, FastAPI).
 

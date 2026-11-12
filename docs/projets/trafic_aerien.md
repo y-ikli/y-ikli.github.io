@@ -4,7 +4,7 @@
 
 > **Stack :** Python · SQL · BigQuery · dbt Core · Kestra · Terraform · Docker · Cloud Storage · Looker Studio
 >
-> En production sur Google Cloud depuis le 10 novembre 2026
+> En production sur Google Cloud depuis le 10 novembre 2026 · [Voir le tableau de bord en direct](https://datastudio.google.com/reporting/b5c07eab-7d83-4023-b4ed-4eed4b65e9a8)
 
 ---
 
@@ -31,15 +31,11 @@ Une observation ponctuelle ne suffit pas. Il faut prendre cette photo **réguli�
 
 ## Résultats
 
-- **En production depuis le 10 novembre 2026** : un passage par heure, puis toutes les deux heures depuis le 11 ; environ 6 minutes par passage, de 11 000 à 17 000 vols collectés à chaque fois.
-- **Deux incidents d'exploitation diagnostiqués et corrigés** :
-    - une nuit, des passages collectés mais non chargés, à cause du plafond de requêtes BigQuery que j'avais fixé. Cause trouvée dans l'historique des requêtes, plafond ajusté, rythme passé à deux heures ;
-    - un soir, le disque de la VM plein (anciennes images Docker), Kestra arrêté. Images purgées, disque agrandi sans recréer la VM, purge automatique chaque nuit.
-
-    Les fichiers bruts sont toujours conservés : aucune donnée collectée n'est perdue.
-- **7 indicateurs**, recalculés à chaque passage. Exemple, passage de 11:01 UTC (6 h du matin sur la côte est américaine) : China Southern Airlines en tête des compagnies, Airbus en tête des constructeurs, et l'Amérique du Nord dominée par le fret de nuit (FedEx en tête des vols régionaux, Memphis, sa plateforme, en tête des écarts départs-arrivées).
-- **Des coûts maîtrisés** : environ 1 $ par jour, essentiellement la VM ; tables partitionnées, marts incrémentaux, plafonds de requêtes.
-- **Qualité** : 25 tests Python (93 % de couverture) et 70 étapes dbt (modèles, tests de données et tests unitaires).
+- **En production depuis novembre 2026** : 11 000 à 17 000 vols collectés toutes les deux heures, en 6 minutes environ par passage.
+- **7 indicateurs** recalculés à chaque passage : compagnies, constructeurs, aéroports et régions.
+- **Fiabilité** : deux incidents d'exploitation (quota BigQuery, espace disque) diagnostiqués et corrigés durablement. Aucune perte de données, grâce à la conservation des fichiers bruts.
+- **Coûts maîtrisés** : environ 1 $ par jour, grâce aux tables partitionnées, aux modèles incrémentaux et aux plafonds de requêtes.
+- **Qualité** : 25 tests Python (93 % de couverture) et 70 étapes dbt (modèles, tests de données, tests unitaires).
 
 ## Captures
 
@@ -76,6 +72,8 @@ La nuit, American Airlines est en tête ; le jour, China Southern Airlines.
 ### Tableau de bord Looker Studio
 
 ![Tableau de bord Looker Studio](../images_projets/trafic_aerien/looker_studio.jpeg)
+
+[Ouvrir le tableau de bord Looker Studio](https://datastudio.google.com/reporting/b5c07eab-7d83-4023-b4ed-4eed4b65e9a8)
 
 ## Perspectives
 

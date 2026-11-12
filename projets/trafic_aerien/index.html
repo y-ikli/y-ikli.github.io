@@ -1,0 +1,1000 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Data Engineer : chaînes de données fiables, testées et mises en production, avec Python, SQL, dbt et le cloud.">
+      
+      
+        <meta name="author" content="Younes IKLI">
+      
+      
+        <link rel="canonical" href="https://y-ikli.github.io/projets/trafic_aerien/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../media_data_platform/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Pipeline trafic aérien - Younes IKLI — Data Engineer</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pipeline-trafic-aerien" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Younes IKLI — Data Engineer" class="md-header__button md-logo" aria-label="Younes IKLI — Data Engineer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Younes IKLI — Data Engineer
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Pipeline trafic aérien
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Projets
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Younes IKLI — Data Engineer" class="md-nav__button md-logo" aria-label="Younes IKLI — Data Engineer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Younes IKLI — Data Engineer
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projets
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projets
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mes projets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipeline trafic aérien
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipeline trafic aérien
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problematique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problématique
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ce-que-jai-construit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ce que j'ai construit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resultats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Résultats
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#captures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Captures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Captures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#les-passages-du-premier-jour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les passages du premier jour
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deroule-dun-passage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Déroulé d'un passage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logs-dun-passage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logs d'un passage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stockage-brut-horodate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stockage brut horodaté
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passages-dans-bigquery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passages dans BigQuery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#un-indicateur-passage-par-passage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Un indicateur, passage par passage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tableau-de-bord-looker-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tableau de bord Looker Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perspectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perspectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../media_data_platform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Media Data Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../molscout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MolScout
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problematique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problématique
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ce-que-jai-construit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ce que j'ai construit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resultats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Résultats
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#captures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Captures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Captures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#les-passages-du-premier-jour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les passages du premier jour
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deroule-dun-passage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Déroulé d'un passage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logs-dun-passage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logs d'un passage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stockage-brut-horodate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stockage brut horodaté
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passages-dans-bigquery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passages dans BigQuery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#un-indicateur-passage-par-passage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Un indicateur, passage par passage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tableau-de-bord-looker-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tableau de bord Looker Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perspectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perspectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="pipeline-trafic-aerien">Pipeline trafic aérien<a class="headerlink" href="#pipeline-trafic-aerien" title="Permanent link">&para;</a></h1>
+<p><strong>Collecter toutes les deux heures tous les vols en cours dans le monde, et en tirer des indicateurs fiables pour n'importe quel jour et n'importe quelle heure.</strong></p>
+<blockquote>
+<p><strong>Stack :</strong> Python · SQL · BigQuery · dbt Core · Kestra · Terraform · Docker · Cloud Storage · Looker Studio</p>
+<p>En production sur Google Cloud depuis le 10 novembre 2026 · <a href="https://datastudio.google.com/reporting/b5c07eab-7d83-4023-b4ed-4eed4b65e9a8">Voir le tableau de bord en direct</a></p>
+</blockquote>
+<hr />
+<h2 id="problematique">Problématique<a class="headerlink" href="#problematique" title="Permanent link">&para;</a></h2>
+<p>Le trafic aérien mondial change à chaque minute : à tout moment, des milliers d'avions sont en vol, et cette photo disparaît aussitôt. Pour comprendre le marché, il faut répondre de façon fiable à des questions comme : quelle compagnie a le plus d'avions en l'air, qui domine les vols régionaux sur chaque continent, quel constructeur équipe le plus d'appareils en service, quels modèles chaque pays fait voler.</p>
+<p>Une observation ponctuelle ne suffit pas. Il faut prendre cette photo <strong>régulièrement</strong>, la <strong>conserver</strong>, la <strong>nettoyer</strong>, et retrouver les réponses <strong>pour n'importe quel jour et n'importe quelle heure</strong>, sans intervention humaine.</p>
+<h2 id="ce-que-jai-construit">Ce que j'ai construit<a class="headerlink" href="#ce-que-jai-construit" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Une extraction robuste</strong> : la source renvoie au plus 1 500 vols par appel ; le pipeline découpe le monde en zones, divise en 4 toute zone qui atteint la limite, dédoublonne, retente les zones refusées avec une attente croissante et les rattrape en fin de passage.</li>
+<li><strong>Une validation à l'entrée</strong> : chaque ligne est vérifiée (Pydantic) ; une ligne illisible part en quarantaine avec la raison, sans bloquer le reste.</li>
+<li><strong>Un stockage brut horodaté</strong> : chaque passage est conservé tel que reçu dans Cloud Storage, rangé par année, mois et jour, puis chargé dans BigQuery sans doublon, même en cas de relance.</li>
+<li><strong>Une modélisation dbt</strong> : staging (nettoyage), vue enrichie (continents, distance à vol d'oiseau, constructeur), puis une table incrémentale par indicateur, une ligne par passage. Tests de données à chaque exécution.</li>
+<li><strong>Des tables de référence publiques</strong> pour ce que la source ne fournit pas : coordonnées des aéroports, pays des compagnies, constructeurs. Une erreur dans la source des pays (des indicatifs radio à la place des pays) a été détectée, corrigée et protégée par un test.</li>
+<li><strong>Une orchestration en production</strong> : Kestra, sur une VM Google Cloud, lance un passage toutes les deux heures et enchaîne extraction puis transformations, un passage à la fois.</li>
+<li><strong>Une infrastructure décrite en code</strong> (Terraform) : stockage, entrepôt, comptes de service à droits minimaux, secrets, réseau sans aucun port ouvert, VM.</li>
+<li><strong>Deux environnements</strong> : développement et production, même code, configuration différente.</li>
+</ul>
+<h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
+<p><img alt="Architecture du pipeline" src="../../images_projets/trafic_aerien/architecture.png" /></p>
+<h2 id="resultats">Résultats<a class="headerlink" href="#resultats" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>En production depuis novembre 2026</strong> : 11 000 à 17 000 vols collectés toutes les deux heures, en 6 minutes environ par passage.</li>
+<li><strong>7 indicateurs</strong> recalculés à chaque passage : compagnies, constructeurs, aéroports et régions.</li>
+<li><strong>Fiabilité</strong> : deux incidents d'exploitation (quota BigQuery, espace disque) diagnostiqués et corrigés durablement. Aucune perte de données, grâce à la conservation des fichiers bruts.</li>
+<li><strong>Coûts maîtrisés</strong> : environ 1 $ par jour, grâce aux tables partitionnées, aux modèles incrémentaux et aux plafonds de requêtes.</li>
+<li><strong>Qualité</strong> : 25 tests Python (93 % de couverture) et 70 étapes dbt (modèles, tests de données, tests unitaires).</li>
+</ul>
+<h2 id="captures">Captures<a class="headerlink" href="#captures" title="Permanent link">&para;</a></h2>
+<h3 id="les-passages-du-premier-jour">Les passages du premier jour<a class="headerlink" href="#les-passages-du-premier-jour" title="Permanent link">&para;</a></h3>
+<p><img alt="Tableau de bord Kestra" src="../../images_projets/trafic_aerien/kestra_tableau_de_bord.png" /></p>
+<h3 id="deroule-dun-passage">Déroulé d'un passage<a class="headerlink" href="#deroule-dun-passage" title="Permanent link">&para;</a></h3>
+<p><img alt="Déroulé d'un passage" src="../../images_projets/trafic_aerien/kestra_gantt.png" /></p>
+<p>Les tâches s'enchaînent : jeton d'accès, extraction et chargement, puis transformations dbt.</p>
+<h3 id="logs-dun-passage">Logs d'un passage<a class="headerlink" href="#logs-dun-passage" title="Permanent link">&para;</a></h3>
+<p><img alt="Logs d'un passage" src="../../images_projets/trafic_aerien/kestra_logs.png" /></p>
+<h3 id="stockage-brut-horodate">Stockage brut horodaté<a class="headerlink" href="#stockage-brut-horodate" title="Permanent link">&para;</a></h3>
+<p><img alt="Stockage brut horodaté" src="../../images_projets/trafic_aerien/stockage_brut.png" /></p>
+<p>Les fichiers bruts rangés par année, mois et jour, l'heure du passage dans le nom.</p>
+<h3 id="passages-dans-bigquery">Passages dans BigQuery<a class="headerlink" href="#passages-dans-bigquery" title="Permanent link">&para;</a></h3>
+<p><img alt="Passages dans BigQuery" src="../../images_projets/trafic_aerien/bigquery_passages.png" /></p>
+<h3 id="un-indicateur-passage-par-passage">Un indicateur, passage par passage<a class="headerlink" href="#un-indicateur-passage-par-passage" title="Permanent link">&para;</a></h3>
+<p><img alt="Un indicateur" src="../../images_projets/trafic_aerien/bigquery_indicateur.png" /></p>
+<p>La nuit, American Airlines est en tête ; le jour, China Southern Airlines.</p>
+<h3 id="tableau-de-bord-looker-studio">Tableau de bord Looker Studio<a class="headerlink" href="#tableau-de-bord-looker-studio" title="Permanent link">&para;</a></h3>
+<p><img alt="Tableau de bord Looker Studio" src="../../images_projets/trafic_aerien/looker_studio.jpeg" /></p>
+<p><a href="https://datastudio.google.com/reporting/b5c07eab-7d83-4023-b4ed-4eed4b65e9a8">Ouvrir le tableau de bord Looker Studio</a></p>
+<h2 id="perspectives">Perspectives<a class="headerlink" href="#perspectives" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Alertes automatiques</strong> : prévenir par e-mail si un passage échoue, si aucun passage n'a eu lieu depuis 3 heures ou si le disque de la VM dépasse 85 %. Les deux incidents auraient été signalés tout de suite.</li>
+<li><strong>Des indicateurs plus lisibles</strong> : afficher le nom et la ville des aéroports à côté de leur code (« CDG, Paris »), grâce à la table de référence déjà chargée.</li>
+<li><strong>Un coût par passage réduit</strong> : matérialiser la vue enrichie en table incrémentale, pour que les indicateurs ne relisent plus deux jours de données à chaque passage.</li>
+<li><strong>L'historique des compagnies</strong> : garder la trace d'un changement de nom ou de pays (snapshots dbt).</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../open_external_newtab.js"></script>
+      
+    
+  </body>
+</html>

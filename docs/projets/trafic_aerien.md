@@ -4,7 +4,7 @@
 
 > **Stack :** Python · SQL · BigQuery · dbt Core · Kestra · Terraform · Docker · Cloud Storage · Looker Studio
 >
-> En production sur Google Cloud depuis le 10 novembre 2026 · Code présenté sur demande
+> En production sur Google Cloud depuis le 10 novembre 2026
 
 ---
 

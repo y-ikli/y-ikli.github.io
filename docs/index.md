@@ -151,7 +151,7 @@ Ancien enseignant, je sais rendre un sujet technique clair pour les équipes mé
 ## Formation
 
 **dbt Fundamentals** — dbt Labs (badge) · 2026  
-**Master Ingénierie de la santé, parcours Data science** — Université de Lille · 2023  
+**Master, parcours Data Science** — Université de Lille · 2023  
 **Master MEEF Informatique** — Université de Lille · 2021  
 **Licence Mathématiques & Informatique – Génie logiciel** — Université Ibn Zohr (Maroc) · 2015
 

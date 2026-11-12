@@ -1,5 +1,5 @@
 site_name: "Younes IKLI — Ingénieur de données"
-site_description: "Ingénieur de données : chaînes de données fiables et traçables, avec une expérience approfondie de la santé, de la biotech et de la recherche."
+site_description: "Ingénieur de données : chaînes de données fiables, testées et mises en production, avec Python, SQL, dbt et le cloud."
 site_url: https://y-ikli.github.io/
 site_author: Younes IKLI
 
@@ -7,8 +7,9 @@ nav:
   - Accueil: index.md
   - Projets:
     - 'Mes projets': projets/index.md
-    - MolScout: projets/molscout.md
+    - Pipeline trafic aérien: projets/trafic_aerien.md
     - Media Data Platform: projets/media_data_platform.md
+    - MolScout: projets/molscout.md
 
 theme:
   name: material

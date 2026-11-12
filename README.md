@@ -1,6 +1,6 @@
-# Portfolio santé
+# Portfolio
 
-Portfolio de Younes IKLI, Data Engineer pour la santé, la biotech et la recherche.
+Portfolio de Younes IKLI, data engineer : chaînes de données fiables, testées et mises en production.
 
 En ligne : https://y-ikli.github.io/
 
